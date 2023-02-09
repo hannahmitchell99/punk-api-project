@@ -1,0 +1,22 @@
+.beer-card{
+    height:400px;
+    width: 200px;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px;
+
+    &__info{
+        height: 30vh;
+        width: auto;
+        margin:10px;
+    }
+
+    &__image{
+        height: 30vh;
+    }
+}
+
