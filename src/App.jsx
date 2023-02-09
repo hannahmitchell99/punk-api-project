@@ -1,11 +1,12 @@
 import './App.scss';
-import BeerCard from './components/BeerCard/BeerCard';
+import BeerCardContainer from './containers/BeerCardContainer/BeerCardContainer';
+import beers from './data/punk';
 
 const App = () => {
   return (
     <div className="App">
       <h1>Hello</h1>
-      <BeerCard image = {"https://images.punkapi.com/v2/keg.png"} name ={"beer"} description={"this is the description"} foodPairing={"this is food pairing"}/>
+      <BeerCardContainer beers={beers}/>
     </div>
   );
 }
