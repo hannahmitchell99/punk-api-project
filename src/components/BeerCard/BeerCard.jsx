@@ -7,8 +7,8 @@ const BeerCard = (props) => {
         <div className="beer-card">
             <img className= "beer-card__image"src={image} alt={name}/>
             <div className="beer-card__info">
-                <h1>{name}</h1>
-                <p>{description}</p>
+                <h2 className="beer-card__info--heading">{name}</h2>
+                <p className="beer-card__info--description">{description}</p>
             </div>
         </div>
     )
