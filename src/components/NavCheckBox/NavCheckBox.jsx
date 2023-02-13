@@ -2,14 +2,15 @@ import React from 'react'
 
 const NavCheckBox = (props) => {
 
-    const {handleChangeABV, handleChangeClassic, handleChangeAcid} = props
+    const {handleABV, handleClassic, handleAcid, abvCheck, classicCheck, acidCheck} = props
   return (
     <div>
-        <input onChange={handleChangeABV} type="checkbox" id="abv" value="6"/>
+        
+        <input onChange={handleABV} checked={abvCheck} type="checkbox" id="abv" />
         <label for="abv">High ABV (Above 6.0%)</label> <br/>
-        <input onChange={handleChangeClassic} type="checkbox" id="classic"  value="2010"/>
+        <input onChange={handleClassic} checked={classicCheck} type="checkbox" id="classic"/>
         <label for="classic">Classic Range</label> <br/>
-        <input onChange={handleChangeAcid} type="checkbox" id="acidity" value="4"/>
+        <input onChange={handleAcid} checked={acidCheck}type="checkbox" id="acidity"/>
         <label for="acidity">Acidic (pH less than 4)</label> <br/>
     </div>
   )

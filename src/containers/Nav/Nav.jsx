@@ -5,11 +5,13 @@ import "../Nav/Nav.scss"
 
 const Nav = (props) => {
 
-  const {handleInput, handleChangeABV, handleChangeClassic, handleChangeAcid} = props
+  const {handleInput, handleABV, handleClassic, handleAcid ,abvCheck, classicCheck, acidCheck, handleFilter} = props
   return (
     <div className = "nav">
       <NavSearch handleInput={handleInput}/>
-      <NavCheckBox handleChangeABV={handleChangeABV} handleChangeClassic={handleChangeClassic} handleChangeAcid={handleChangeAcid}/>
+      <NavCheckBox handleABV={handleABV} handleClassic={handleClassic} handleAcid={handleAcid}
+      abvCheck={abvCheck} classicCheck={classicCheck} acidCheck={acidCheck}/>
+      <button onClick={handleFilter}>Filter</button>
       <h1>Nav</h1>
       </div>
   )
