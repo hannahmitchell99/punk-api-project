@@ -12,7 +12,6 @@ const Nav = (props) => {
       <NavCheckBox handleABV={handleABV} handleClassic={handleClassic} handleAcid={handleAcid}
       abvCheck={abvCheck} classicCheck={classicCheck} acidCheck={acidCheck}/>
       <button onClick={handleFilter}>Filter</button>
-      <h1>Nav</h1>
       </div>
   )
 }

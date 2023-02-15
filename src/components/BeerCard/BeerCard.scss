@@ -1,37 +1,55 @@
-.beer-card{
-    width: 200px;
-    border: 1px solid black;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 10px;
+@import "../../variables";
+
+.beer-card {
+  width: 200px;
+  border: 1px solid $colour-dark-blue;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 10px;
+  background-color: $colour-light-blue;
+
+  &__image {
+    height: 30vh;
+  }
+}
+
+.beer-card__info {
+  height: 30vh;
+  width: auto;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+
+  &--heading {
+    text-align: center;
+    color: $colour-dark-navy;
+    font-size: 1rem;
+    font-family: $font-heading;
+  }
+
+  &--description {
+    font-family: $font-main;
+    font-weight: 750;
+    color: $colour-dark-blue;
+    overflow-y: scroll;
 
     
-
-    &__image{
-        height: 30vh;
-    }
+  }
 }
 
-.beer-card__info{
-    height: 30vh;
-    width: auto;
-    margin:10px;
-    display: flex;
-    flex-direction: column;
+::-webkit-scrollbar {
+    width: 16px;
+  }
 
+  ::-webkit-scrollbar-track {
+    background: $colour-light-blue;
+  }
 
-    &--heading{
-        color: black;
-        font-size: 1rem;
-    }
-
-    &--description{
-        
-        overflow-y:scroll;
-    }
-
-}
-
+  ::-webkit-scrollbar-thumb {
+    background-color: $colour-medium-blue;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+  }
