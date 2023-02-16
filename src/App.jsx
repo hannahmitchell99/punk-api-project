@@ -104,7 +104,7 @@ const App = () => {
     if(beer.length===0){
       getBeers()
     }
-    //handleFilter();
+    handleFilter();
     }, []);
 
     
@@ -114,17 +114,17 @@ const App = () => {
   };
 
   const handleABV = () => {
-    setAbvCheck(!abvCheck);
+    setAbvCheck(true);
     handleFilter()
   };
 
   const handleClassic = () => {
-    setClassicCheck(!classicCheck);
+    setClassicCheck(true);
     handleFilter()
   };
 
   const handleAcid = () => {
-    setAcidCheck(!acidCheck);
+    setAcidCheck(true);
     handleFilter()
   };
 
@@ -145,46 +145,3 @@ const App = () => {
 };
 
 export default App;
-
-
-
-// const handleFilter = async() => {
-//   getBeers()
-//   const inputArray = beer.filter((beer)=>beer.name.toLowerCase().includes((input).toLowerCase()))
-//   const classicArray = beer.filter((beer) => beer.first_brewed && parseInt(beer.first_brewed.slice(-4)) < 2010)
-//   const acidArray= beer.filter((beer) => beer.ph && beer.ph < 4)
-//   const abvArray= beer.filter((beer)=> beer.abv && beer.abv >= 6)
-
-//   if(inputArray && acidCheck && classicCheck && abvCheck){
-//     setBeerType(inputArray.filter((beer) => beer.first_brewed && parseInt(beer.first_brewed.slice(-4)) < 2010).filter((beer) => beer.ph && beer.ph < 4).filter((beer)=> beer.abv && beer.abv >= 6))
-//   } else if (inputArray && acidCheck && classicCheck){
-//     setBeerType(inputArray.filter((beer) => beer.ph && beer.ph < 4).filter((beer) => beer.first_brewed && parseInt(beer.first_brewed.slice(-4)) < 2010))
-//   } else if (inputArray && abvCheck && classicCheck ){
-//     setBeerType(inputArray.filter((beer)=> beer.abv && beer.abv >= 6).filter((beer) => beer.first_brewed && parseInt(beer.first_brewed.slice(-4)) < 2010))
-//   } else if (inputArray && abvCheck & acidCheck){
-//     setBeerType(inputArray.filter((beer)=> beer.abv && beer.abv >= 6)
-//     .filter((beer) => beer.ph && beer.ph < 4))
-//   } else if  (inputArray && acidCheck){
-//     setBeerType(inputArray.filter((beer) => beer.ph && beer.ph < 4))
-//   } else if (inputArray && classicCheck){
-//     setBeerType(inputArray.filter((beer) => beer.first_brewed && parseInt(beer.first_brewed.slice(-4)) < 2010))
-//   } else if (inputArray && abvCheck) {
-//     setBeerType(inputArray.filter((beer)=> beer.abv && beer.abv >= 6))
-//   } else if (classicCheck && acidCheck){
-//     setBeerType(classicArray.filter((beer) => beer.ph && beer.ph < 4))
-//   } else if (classicCheck && abvCheck){
-//     setBeerType(classicArray.filter((beer)=> beer.abv && beer.abv >= 6))
-//   } else if(acidCheck && abvCheck){
-//     setBeerType(acidArray.filter((beer)=> beer.abv && beer.abv >= 6))
-//   }else if (classicCheck){
-//     setBeerType(classicArray)
-//   } else if (acidCheck) {
-//     setBeerType(acidArray)
-//   } else if (abvCheck){
-//     setBeerType(abvArray)
-//   } else if (inputArray){
-//     setBeerType(inputArray)
-//   } else {
-//     setBeerType(beer)
-//   }
-// }

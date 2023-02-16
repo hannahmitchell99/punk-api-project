@@ -1,9 +1,10 @@
+@import "./variables";
 
 body{
-    background-color: #19506a;
+    background-color: $colour-white;
 }
 .App{
     display: flex;
     flex-direction: row;
-    background-color: #19506a;
+    background-color: $colour-white;
 }

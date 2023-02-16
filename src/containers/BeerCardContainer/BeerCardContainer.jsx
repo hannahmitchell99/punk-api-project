@@ -11,7 +11,11 @@ const BeerCardContainer = (props) => {
     })
 
   return (
-    <div className="beer-card-container">{beersJSX}</div>
+    <div className='beer-card-container'>
+      <h1 className='beer-card-container__heading'>🍺Punk API🍺</h1>
+    <div className="beer-card-container__display">{beersJSX}</div>
+    </div>
+
   )
   
 }

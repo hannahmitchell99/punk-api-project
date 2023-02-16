@@ -1,7 +1,13 @@
 @import "../../variables";
 
 label, .nav__search{
-    
+    display:flex;
     font-family: $font-heading;
-    color: $colour-dark-blue;
+    color: $colour-light-blue;
+}
+
+input{
+    background-color: $colour-dark-blue;
+    border: 1px solid $colour-light-blue;
+    border-radius: 2px;
 }

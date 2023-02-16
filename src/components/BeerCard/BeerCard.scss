@@ -10,9 +10,11 @@
   align-items: center;
   margin: 10px;
   background-color: $colour-light-blue;
+  box-shadow: 5px 1px $colour-dark-navy;
 
   &__image {
     height: 30vh;
+    margin: 10px;
   }
 }
 
