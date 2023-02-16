@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState} from "react";
+
 import "./App.scss";
 import BeerCardContainer from "./containers/BeerCardContainer/BeerCardContainer";
 import Nav from "./containers/Nav/Nav";
@@ -12,6 +13,8 @@ const App = () => {
   const [acidCheck, setAcidCheck] = useState(false);
   const [defaultBeers, setDefaultBeers] = useState([])
 
+  
+
   const getBeers = async () => {
     const res = await fetch(
       "https://api.punkapi.com/v2/beers?page=3&per_page=80"
@@ -20,6 +23,27 @@ const App = () => {
     setBeerType(data);
     setDefaultBeers(data);
   };
+
+  const handleInput = (event) => {
+    setInput(event.target.value);
+    handleFilter()
+  };
+
+  const handleABV = () => {
+    setAbvCheck(!abvCheck);
+    handleFilter()
+  };
+
+  const handleClassic = () => {
+    setClassicCheck(!classicCheck);
+    handleFilter()
+  };
+
+  const handleAcid = () => {
+    setAcidCheck(!acidCheck);
+    handleFilter()
+  };
+
 
   const handleFilter = () => {
     const inputArray = beer.filter((beer) =>
@@ -107,26 +131,6 @@ const App = () => {
     handleFilter();
     }, []);
 
-    
-  const handleInput = (event) => {
-    setInput(event.target.value);
-    handleFilter()
-  };
-
-  const handleABV = () => {
-    setAbvCheck(true);
-    handleFilter()
-  };
-
-  const handleClassic = () => {
-    setClassicCheck(true);
-    handleFilter()
-  };
-
-  const handleAcid = () => {
-    setAcidCheck(true);
-    handleFilter()
-  };
 
   return (
     <div className="App">
@@ -139,7 +143,7 @@ const App = () => {
         classicCheck={classicCheck}
         acidCheck={acidCheck}
       />
-      <BeerCardContainer beers={beer} />
+      <BeerCardContainer beers={beer}  />
     </div>
   );
 };
