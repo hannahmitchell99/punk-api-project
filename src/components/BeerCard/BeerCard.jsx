@@ -22,4 +22,4 @@ const BeerCard = (props) => {
 
 export default BeerCard;
 
-//p className="beer-card__info--description"{description}
+

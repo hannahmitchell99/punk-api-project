@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-
 import "./App.scss";
+import RandomBeer from "./containers/RandomBeer/RandomBeer";
 import BeerCardContainer from "./containers/BeerCardContainer/BeerCardContainer";
 import Nav from "./containers/Nav/Nav";
-//import beers from './data/punk';
 
 const App = () => {
   const [beer, setBeerType] = useState([]);
@@ -11,17 +10,26 @@ const App = () => {
   const [abvCheck, setAbvCheck] = useState(false);
   const [classicCheck, setClassicCheck] = useState(false);
   const [acidCheck, setAcidCheck] = useState(false);
-  const [defaultBeers, setDefaultBeers] = useState([]);
+  const [defaultBeer, setDefaultBeer] = useState([]);
+  const [randomDisplay, setRandomDisplay] = useState(false);
 
+  // getting api data 
   const getBeers = async () => {
     const res = await fetch(
       "https://api.punkapi.com/v2/beers?page=3&per_page=80"
     );
     const data = await res.json();
     setBeerType(data);
-    setDefaultBeers(data);
+    setDefaultBeer(data)
   };
 
+  // setting the spotlight display
+
+  const handleSpotlight = () => {
+    setRandomDisplay(!randomDisplay)
+  }
+
+  // logic info for the filter 
   let abv = false;
   let classic = false;
   let acidic = false;
@@ -131,7 +139,7 @@ const App = () => {
     } else if (inputArray) {
       setBeerType(inputArray);
     } else {
-      setBeerType(beer);
+      setBeerType(defaultBeer);
     }
   };
 
@@ -139,10 +147,11 @@ const App = () => {
     if (beer.length === 0) {
       getBeers();
     }
-    handleFilter();
+    handleFilter(abv, acidic, classic);
   }, []);
 
   return (
+     
     <div className="App">
       <Nav
         handleInput={handleInput}
@@ -152,9 +161,14 @@ const App = () => {
         abvCheck={abvCheck}
         classicCheck={classicCheck}
         acidCheck={acidCheck}
+        handleSpotlight={handleSpotlight}
+        randomDisplay={randomDisplay}
+        beer= {defaultBeer}
       />
       <BeerCardContainer beers={beer} />
+
     </div>
+
   );
 };
 
