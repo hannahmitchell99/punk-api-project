@@ -3,9 +3,24 @@
 .nav{
     display: flex;
     flex-direction: column;
-    max-width: 20vw;
-    min-width: 20vw;
+    max-width: 17vw;
+    min-width: 17vw;
     padding: 10px;
     background-color: $colour-dark-blue;
     gap: 10px;
+
+    &__button{
+        
+        display: flex;
+        font-family: $font-main;
+        font-weight: 700;
+        font-size: 1rem;
+        border-radius: 3px;
+        background-color: $colour-white;
+        border: 2px solid $colour-medium-blue;
+        color: $colour-dark-blue;
+        width: 60%;
+        margin: 2px;
+
+    }
 }

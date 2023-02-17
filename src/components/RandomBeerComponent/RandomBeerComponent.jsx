@@ -9,9 +9,10 @@ const RandomBeerComponent = ({name, image, abv, ph, paired}) => {
       <img className="random-beer__image" src={image} alt={name} />
       <div className="random-beer__info">
         <h2 className="random-beer__info--heading">{name}</h2>
-        <p className='random-beer__info--abv'>ABV: {abv}</p>
+        <p className='random-beer__info--abv'>ABV: {abv}%</p>
         <p className='random-beer__info--ph'>pH: {ph}</p>
-        <div className="random-beer__info--tips"> Best Paired With:
+        <p className="random-beer__info--heading">Best Paired With🍽️</p>
+        <div className="random-beer__info--tips"> 
         {paired.map((sentence, index) => (
           <p key={name + index}>
             {sentence}

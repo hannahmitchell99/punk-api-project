@@ -12,7 +12,7 @@ const Nav = (props) => {
       <NavSearch handleInput={handleInput}/>
       <NavCheckBox handleABV={handleABV} handleClassic={handleClassic} handleAcid={handleAcid}
       abvCheck={abvCheck} classicCheck={classicCheck} acidCheck={acidCheck}/>
-      <button onClick={handleSpotlight}>Spotlight Beer</button>
+      <button className = "nav__button" onClick={handleSpotlight}>Spotlight Beer</button>
       { randomDisplay && <RandomBeer beer={beer}/>}
       
     
