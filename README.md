@@ -8,7 +8,7 @@ In creating this project, I had to first get an idea of how to approach the chan
 
 
 
-<img src="https://user-images.githubusercontent.com/119801701/219689732-5fbe284a-d59b-4497-a05b-4c58991e74e8.png" width="700" height="700">
+<img src="https://user-images.githubusercontent.com/119801701/219689732-5fbe284a-d59b-4497-a05b-4c58991e74e8.png" width="800" height="800">
 
 
 
